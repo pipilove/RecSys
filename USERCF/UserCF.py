@@ -7,18 +7,18 @@ __mtime__ = '16-7-4'
 __email__ = 'pipisorry@126.com'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
-              ┏┓   ┏┓
-            ┏━┛┻━━━┛┻━━┓
-            ┃     ☃    ┃
-            ┃  ┳┛   ┗┳ ┃
-            ┃     ┻    ┃
+              ┏┓      ┏┓
+            ┏┛┻━━━┛┻┓
+            ┃      ☃      ┃
+            ┃  ┳┛  ┗┳  ┃
+            ┃      ┻      ┃
             ┗━┓      ┏━┛
-              ┃      ┗━━━┓
-              ┃  神兽保佑 ┣┓
-              ┃　永无BUG！┏┛
-              ┗┓┓┏━━━┳┓┏┛
-               ┃┫┫   ┃┫┫
-               ┗┻┛   ┗┻┛
+                ┃      ┗━━━┓
+                ┃  神兽保佑    ┣┓
+                ┃　永无BUG！   ┏┛
+                ┗┓┓┏━┳┓┏┛
+                  ┃┫┫  ┃┫┫
+                  ┗┻┛  ┗┻┛
 """
 import numpy as np
 import pandas as pd
@@ -40,8 +40,7 @@ def my_pearson(u, v):
     v = v[common_index]
     # print(u, v)
     sig_weight = min(u.size, 50) / 50  # significance weighting
-    similar = (1 - spatial.distance.correlation(u, v)) * sig_weight if np.unique(
-        u).size > 1 and np.unique(v).size > 1 else 0.0
+    similar = (1 - spatial.distance.correlation(u, v)) * sig_weight if np.unique(u).size > 1 and np.unique(v).size > 1 else 0.0
     # similar = (1 - spatial.distance.cosine(u, v)) * sig_weight if np.unique(u).size > 1 and np.unique(v).size > 1 else 0.0
     return similar
 
